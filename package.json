@@ -1,0 +1,41 @@
+{
+  "name": "turbo-template",
+  "description": "A project template for turbo monorepos with auto release management.",
+  "private": true,
+  "author": "Shane McGuirt",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "bootstrap:ci": "pnpm i --frozen-lockfile",
+    "clean": "turbo run clean --parallel",
+    "lint": "turbo run lint --parallel",
+    "test": "turbo run test --parallel",
+    "test:watch": "turbo run test:watch",
+    "test:prod": "turbo run test:prod --parallel",
+    "build": "turbo run build --parallel",
+    "build:prod": "turbo run build --parallel"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@srmcguirt/auto-config": "latest",
+    "@srmcguirt/commitlint-config": "latest",
+    "@types/node": "^18.14.6",
+    "auto": "^10.43.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "lerna": "^6.5.1",
+    "lint-staged": "^13.1.2",
+    "turbo": "^1.8.3",
+    "type-fest": "^3.6.1",
+    "typescript": "latest"
+  },
+  "repository": "srmcguirt/turbo-template",
+  "version": "0.0.0"
+}

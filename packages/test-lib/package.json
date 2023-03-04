@@ -1,0 +1,56 @@
+{
+  "name": "test-lib",
+  "version": "0.0.0",
+  "description": "Test Library",
+  "repository": "srmcguirt/test-lib",
+  "author": "Shane McGuirt",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run-s clean compile",
+    "build:prod": "cross-env NODE_ENV=production pnpm compile",
+    "clean": "rimraf dist",
+    "compile": "rollup -c rollup.config.ts",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .js,.ts,.tsx --cache",
+    "prepack": "pnpm build",
+    "test": "pnpm lint && pnpm coverage",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@srmcguirt/eslint-config": "latest",
+    "@srmcguirt/ts-config": "latest",
+    "@vitest/coverage-c8": "latest",
+    "@vitest/ui": "latest",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.17.11",
+    "eslint": "^8.35.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^4.3.0",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "tslib": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "packageManager": "pnpm@7.28.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}
