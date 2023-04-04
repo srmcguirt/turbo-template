@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "main": "./dist/index.d.ts",
+  "main": "./dist/index.ts",
   "scripts": {
     "compile": "tsc --project tsconfig.build.json",
-    "clean": "rimraf dist coverage tsconfig.build.tsbuildinfo",
-    "build": "run-s clean compile",
+    "clean": "npx rimraf dist coverage tsconfig.build.tsbuildinfo",
+    "build": "pnpm clean && pnpm compile",
     "build:prod": "pnpm compile"
   },
   "types": "./dist/index.d.ts",

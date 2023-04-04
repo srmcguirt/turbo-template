@@ -1,3 +1,3 @@
 module.exports = {
-  '**/*': ['prettier --cache --write --ignore-unknown'],
+  "**/*": ["prettier --cache --write --ignore-unknown"],
 };

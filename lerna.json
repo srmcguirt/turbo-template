@@ -1,6 +1,15 @@
 {
-  "npmClient": "pnpm",
   "packages": ["apps/*", "packages/*"],
+  "npmClient": "pnpm",
+  "useWorkspaces": true,
   "version": "independent",
-  "useWorkspaces": true
+  "command": {
+    "publish": {
+      "registry": "https://registry.npmjs.org"
+    },
+    "version": {
+      "allowBranch": "main",
+      "ignoreChanges": ["**/CHANGELOG.md", "**/node_modules/**"]
+    }
+  }
 }

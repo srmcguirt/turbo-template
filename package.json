@@ -1,15 +1,10 @@
 {
-  "name": "turbo-template",
-  "description": "A project template for turbo monorepos with auto release management.",
+  "name": "monorepo",
+  "description": "Template description",
   "private": true,
-  "author": "Shane McGuirt",
-  "main": "index.js",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "commit": "git-cz",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "bootstrap:ci": "pnpm i --frozen-lockfile",
     "clean": "turbo run clean --parallel",
@@ -22,20 +17,37 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "^17.4.4",
+    "@commitlint/cli": "^17.5.1",
+    "@rollup/plugin-typescript": "^11.1.0",
     "@srmcguirt/auto-config": "latest",
     "@srmcguirt/commitlint-config": "latest",
-    "@types/node": "^18.14.6",
-    "auto": "^10.43.0",
+    "@srmcguirt/eslint-config": "latest",
+    "@srmcguirt/prettier-config": "latest",
+    "@types/node": "^18.15.11",
+    "auto": "^10.44.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.37.0",
     "husky": "^8.0.3",
-    "lerna": "^6.5.1",
-    "lint-staged": "^13.1.2",
-    "turbo": "^1.8.3",
-    "type-fest": "^3.6.1",
+    "lerna": "^6.6.1",
+    "lint-staged": "^13.2.0",
+    "pnpm": "^8.1.1",
+    "prettier": "^2.8.7",
+    "turbo": "^1.8.8",
+    "type-fest": "^3.7.2",
     "typescript": "latest"
   },
   "repository": "srmcguirt/turbo-template",
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.1.1",
+  "eslintConfig": {
+    "extends": [
+      "@srmcguirt"
+    ]
+  },
+  "auto": {
+    "extends": [
+      "@srmcguirt"
+    ]
+  }
 }

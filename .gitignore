@@ -142,5 +142,6 @@ dist
 dist/
 build/
 
-# Jest folder of detailed test coverage
+# Jest/Vitest folder of detailed test coverage
 coverage/
+html

@@ -21,9 +21,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "run-s clean compile",
+    "build": "pnpm clean && pnpm compile",
     "build:prod": "cross-env NODE_ENV=production pnpm compile",
-    "clean": "rimraf dist",
+    "clean": "npx rimraf dist",
     "compile": "rollup -c rollup.config.ts",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .js,.ts,.tsx --cache",
@@ -37,19 +37,19 @@
     "@vitest/coverage-c8": "latest",
     "@vitest/ui": "latest",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.17.11",
-    "eslint": "^8.35.0",
+    "esbuild": "^0.17.15",
+    "eslint": "^8.37.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^4.3.0",
-    "rollup": "^3.18.0",
-    "rollup-plugin-dts": "^5.2.0",
+    "rimraf": "^4.4.1",
+    "rollup": "^3.20.2",
+    "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "tslib": "latest",
     "typescript": "latest",
     "vite": "latest",
     "vitest": "latest"
   },
-  "packageManager": "pnpm@7.28.0",
+  "packageManager": "pnpm@8.1.1",
   "publishConfig": {
     "access": "public"
   }
