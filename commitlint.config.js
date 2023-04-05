@@ -1,3 +1,3 @@
 module.exports = {
-  extends: '@srmcguirt/commitlint-config',
+  extends: "@srmcguirt/commitlint-config",
 };

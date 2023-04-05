@@ -9,7 +9,7 @@
     },
     "test": {
       "outputs": ["coverage/**"],
-      "inputs": ["src/**/*.ts", "src/**/*.tsx"]
+      "inputs": ["source/**/*.ts"]
     },
     "test:watch": {
       "cache": false

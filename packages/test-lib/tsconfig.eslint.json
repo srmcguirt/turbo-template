@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": [".*.cjs", "*.js", "src/*", "*.*.ts"],
+  "include": [".*.cjs", "*.js", "source/*", "test/*", "*.*.ts"],
   "compilerOptions": {
     "noEmit": true,
     "allowJs": true

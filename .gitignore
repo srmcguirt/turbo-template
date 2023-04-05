@@ -141,7 +141,16 @@ dist
 # Bundle output directories
 dist/
 build/
+dist-ssr
+server/dist
+public/dist
 
 # Jest/Vitest folder of detailed test coverage
 coverage/
 html
+
+# Turbo
+.DS_Store
+.turbo
+*.local
+

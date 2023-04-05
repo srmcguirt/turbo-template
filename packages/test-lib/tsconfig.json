@@ -1,15 +1,14 @@
 {
-  "extends": "@srmcguirt/ts-config/lib.json",
-  "exclude": ["node_modules", "dist", "coverage"],
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "outDir": "dist",
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.vite.json"
+    },
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
     }
-  }
+  ]
 }

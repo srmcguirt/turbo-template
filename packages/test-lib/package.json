@@ -9,22 +9,20 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "types": "./dist/test-lib.d.ts",
+      "import": "./dist/test-lib.es.js",
+      "require": "./dist/test-lib.cjs.js"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/test-lib.cjs.js",
+  "module": "./dist/test-lib.es.js",
+  "types": "./dist/test-lib.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "pnpm clean && pnpm compile",
+    "build": "vite build",
     "build:prod": "cross-env NODE_ENV=production pnpm compile",
-    "clean": "npx rimraf dist",
-    "compile": "rollup -c rollup.config.ts",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .js,.ts,.tsx --cache",
     "prepack": "pnpm build",
@@ -33,24 +31,24 @@
   },
   "devDependencies": {
     "@srmcguirt/eslint-config": "latest",
-    "@srmcguirt/ts-config": "latest",
     "@vitest/coverage-c8": "latest",
     "@vitest/ui": "latest",
-    "cross-env": "^7.0.3",
-    "esbuild": "^0.17.15",
-    "eslint": "^8.37.0",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^4.4.1",
-    "rollup": "^3.20.2",
-    "rollup-plugin-dts": "^5.3.0",
-    "rollup-plugin-esbuild": "^5.0.0",
-    "tslib": "latest",
+    "esbuild": "latest",
+    "eslint": "latest",
+    "jsdom": "latest",
+    "tsconfig": "workspace:*",
     "typescript": "latest",
+    "unplugin-auto-import": "latest",
     "vite": "latest",
+    "vite-plugin-dts": "latest",
     "vitest": "latest"
   },
   "packageManager": "pnpm@8.1.1",
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "vite": ">=3.0.0",
+    "node": ">=14.0.0"
   }
 }
